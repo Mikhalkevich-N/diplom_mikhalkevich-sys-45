@@ -86,9 +86,16 @@ Cоздайте ВМ, разверните на ней Elasticsearch. Устан
 
 ![png](image-10.png)
 
-Создаю main.tf` c блоком провайдера.
+Создаю main.tf` c блоком провайдера и блоки для создания инфраструктуры в Yandex Cloud:
+Nginx-web-1, Nginx-web-2, Target group, Backend group,  HTTP router, Application load balancer, Zabbix, Elasticsearch, Kibana, Network, Subnet. Gateway. Route table, Security_groups, Bastion, Snapshot_schedule.
 
 ![png](image-11.png)
+
+main.tf
+
+Создаю файл outputs.tf для вывода информации в консоль по созданию ВМ.
+
+outputs.tf
 
 Инициализирую провайдера.
 
@@ -116,6 +123,9 @@ remote_user = nmu
 private_key_file = /nmu/.ssh/id_ed25519
 become=True
 ```
+Создаю ansible-файлы для Zabbix, Elasticsearch, Kibana, Nginx, filebeat:
+
+### 2. Создание инфраструктуры в Yandex Cloud
 
 Запуск terraform
 
@@ -126,14 +136,29 @@ terraform apply
 
 ![png](image-21.png)
 
-![png](image-9.png)
+
+Вывод информации в консоль по созданию ВМ.
+
+![png](image-39.png)
+
+![png](image-45.png)
+
+![png](image-46.png)
+
+![png](image-47.png)
+
+![png](image-49.png)
+
+![png](image-48.png)
+
+### 3. Проверка и настройка ресурсов
 
 Создаю файл hosts и добавляю в него начальные данные:
 
 ```
 sudo nano ~/hosts.ini
 ```
-![png](image-12.png)
+![png](image-40.png)
 
 Nginx на 2 ВМ. Замена стандартного файла на index.nginx.html
 
@@ -163,32 +188,32 @@ Zabbix
 
 Проверка и настройка ресурсов.
 
- a) Сайт. Серверы Nginx
+ Сайт. Серверы Nginx
 
  ```
 curl -v <публичный IP балансера>:80
 
-curl -v 158.160.164.26:80
+curl -v 158.160.139.105:80
 ```
-![png](image-23.png)
+![png](image-41.png)
 
 ```
-http://158.160.164.26
+http://158.160.139.105
 
 ```
-![png](image-24.png)
+![png](image-42.png)
 
-b) Мониторинг. Zabbix.
-
-```
-http://158.160.143.202/zabbix
+Мониторинг. Zabbix.
 
 ```
-![png](image-25.png)
+http://158.160.128.50/zabbix
+
+```
+![png](image-43.png)
 
 Bводим пароль из playbook-zabbix.yaml
 
-![png](image-26.png)
+![png](image-44.png)
 
 ![png](image-27.png)
 
@@ -206,7 +231,7 @@ password: zabbix
 
 ![png](image-32.png)
 
-с) Логи. Elasticsearch, Kibana, Filebeat.
+Логи. Elasticsearch, Kibana, Filebeat.
 
 Запуск Kibana:
 ```
