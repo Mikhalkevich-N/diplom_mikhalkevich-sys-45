@@ -40,10 +40,10 @@
 
   - name: "create user and database zabbix, import initial schema and data, configure DBPassword"
     shell: |
-      su - postgres -c 'psql --command "CREATE USER zabbix WITH PASSWORD '\'123123123\'';"'
+      su - postgres -c 'psql --command "CREATE USER zabbix WITH PASSWORD '\'123456789\'';"'
       su - postgres -c 'psql --command "CREATE DATABASE zabbix OWNER zabbix;"'
       zcat /usr/share/zabbix-sql-scripts/postgresql/server.sql.gz | sudo -u zabbix psql zabbix
-      sed -i 's/# DBPassword=/DBPassword=123123123/g' /etc/zabbix/zabbix_server.conf
+      sed -i 's/# DBPassword=/DBPassword=123456789/g' /etc/zabbix/zabbix_server.conf
 
   - name: "restart and enable zabbix-server and apache"
     shell: |
