@@ -91,11 +91,11 @@ Nginx-web-1, Nginx-web-2, Target group, Backend group,  HTTP router, Application
 
 ![png](image-11.png)
 
-main.tf
+[ main.tf ](https://github.com/Mikhalkevich-N/diplom_mikhalkevich-sys-45/blob/main/main.tf)
 
 Создаю файл outputs.tf для вывода информации в консоль по созданию ВМ.
 
-outputs.tf
+[outputs.tf ] (https://github.com/Mikhalkevich-N/diplom_mikhalkevich-sys-45/blob/main/outputs.tf)
 
 Инициализирую провайдера.
 
@@ -161,9 +161,9 @@ sudo nano ~/hosts.ini
 ![png](image-40.png)
 
 Nginx на 2 ВМ. Замена стандартного файла на index.nginx.html
+[index.nginx.html](https://github.com/Mikhalkevich-N/diplom_mikhalkevich-sys-45/blob/main/index.nginx.html)
 
 ![png](image-13.png)
-
 
 
 Elasticsearch
