@@ -164,6 +164,8 @@ Nginx на 2 ВМ. Замена стандартного файла на index.n
 
 ![png](image-13.png)
 
+
+
 Elasticsearch
 
 ![png](image-14.png)
@@ -195,13 +197,13 @@ curl -v <публичный IP балансера>:80
 
 curl -v 158.160.139.105:80
 ```
-![png](image-41.png)
+![png](image-50.png)
 
 ```
 http://158.160.139.105
 
 ```
-![png](image-42.png)
+![png](image-51.png)
 
 Мониторинг. Zabbix.
 
