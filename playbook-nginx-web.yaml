@@ -1,0 +1,24 @@
+---
+- name: "install nginx,mv file and restart nginx"
+  hosts: nginx-web
+  become: true
+
+  tasks:
+  - name: "apt update"
+    apt:
+      update_cache: yes
+
+  - name: "install nginx"
+    apt:
+      name: nginx
+      state: latest
+
+  - name: "mv file 'index.nginx-debian.html' for nginx-web"
+    copy:
+      src: /home/nmu/dip/index.nginx.html
+      dest: /var/www/html/index.nginx.html
+
+  - name: "4/4 restart Nginx"
+    systemd:
+      name: nginx
+      state: restarted
