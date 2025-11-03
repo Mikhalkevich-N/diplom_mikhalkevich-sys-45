@@ -145,6 +145,8 @@ terraform apply
 
 ![png](image-46.png)
 
+![png](image-52.png)
+
 ![png](image-47.png)
 
 ![png](image-49.png)
