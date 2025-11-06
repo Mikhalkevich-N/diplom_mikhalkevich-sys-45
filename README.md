@@ -61,7 +61,7 @@ Cоздайте ВМ, разверните на ней Elasticsearch. Устан
 Создаю сервисный аккаунт в облаке. Выдаю права editor.
 Выпускаю авторизованный ключ для этого аккаунта и скачиваю его в домашний каталог по пути ~/.authtorized_key.json.
 
-![png](image-7.png)
+![png](https://github.com/Mikhalkevich-N/diplom_mikhalkevich-sys-45/blob/main/img/image-7.png)
 
 Вписываю в переменные cloud_id и folder_id в variables.tf
 
@@ -69,26 +69,26 @@ Cоздайте ВМ, разверните на ней Elasticsearch. Устан
 
 Скачиваю и распаковываю последнюю стабильную версию на 2.10.2025г. сайта: https://hashicorp-releases.yandexcloud.net/terraform/
 
-![png](image.png)
+![png](https://github.com/Mikhalkevich-N/diplom_mikhalkevich-sys-45/blob/main/img/image.png)
 
 Создаю файл `.terraformrc` и добавляю блок с источником, из которого будет устанавливаться провайдер.
 
-![png](image-2.png)
+![png](https://github.com/Mikhalkevich-N/diplom_mikhalkevich-sys-45/blob/main/img/image-2.png)
 
-![png](image-1.png)
+![png](https://github.com/Mikhalkevich-N/diplom_mikhalkevich-sys-45/blob/main/img/image-1.png)
 
 Для файла с метаданными, `meta.yaml`, необходим публичный SSH-ключ для доступа к ВМ. Для Yandex Cloud рекомендуется использовать алгоритм Ed25519: сгенерированные по нему ключи — самые безопасные. 
 
-![png](image-4.png)
+![png](https://github.com/Mikhalkevich-N/diplom_mikhalkevich-sys-45/blob/main/img/image-4.png)
 
 Создаю файл `meta.yaml` с данными пользователя на создаваемые ВМ.
 
-![png](image-10.png)
+![png](https://github.com/Mikhalkevich-N/diplom_mikhalkevich-sys-45/blob/main/img/image-10.png)
 
 Создаю main.tf` c блоком провайдера и блоки для создания инфраструктуры в Yandex Cloud:
 Nginx-web-1, Nginx-web-2, Target group, Backend group,  HTTP router, Application load balancer, Zabbix, Elasticsearch, Kibana, Network, Subnet. Gateway. Route table, Security_groups, Bastion, Snapshot_schedule.
 
-![png](image-11.png)
+![png](https://github.com/Mikhalkevich-N/diplom_mikhalkevich-sys-45/blob/main/img/image-11.png)
 
 [ main.tf ](https://github.com/Mikhalkevich-N/diplom_mikhalkevich-sys-45/blob/main/terraform/main.tf)
 
@@ -98,7 +98,7 @@ Nginx-web-1, Nginx-web-2, Target group, Backend group,  HTTP router, Application
 
 Инициализирую провайдера.
 
-![png](image-3.png)
+![png](https://github.com/Mikhalkevich-N/diplom_mikhalkevich-sys-45/blob/main/img/image-3.png)
 
 Terraform готов к использованию.
 
@@ -110,7 +110,7 @@ Terraform готов к использованию.
 apt install ansible
 ansible --version
 ```
-![png](image-8.png)
+![png](https://github.com/Mikhalkevich-N/diplom_mikhalkevich-sys-45/blob/main/img/image-8.png)
 
 Создаю файл ansible.cfg :
 
@@ -133,24 +133,24 @@ terraform apply
 
 ```
 
-![png](image-21.png)
+![png](https://github.com/Mikhalkevich-N/diplom_mikhalkevich-sys-45/blob/main/img/image-21.png)
 
 
 Вывод информации в консоль по созданию ВМ.
 
-![png](image-39.png)
+![png](https://github.com/Mikhalkevich-N/diplom_mikhalkevich-sys-45/blob/main/img/image-39.png)
 
-![png](image-45.png)
+![png](https://github.com/Mikhalkevich-N/diplom_mikhalkevich-sys-45/blob/main/img/image-45.png)
 
-![png](image-46.png)
+![png](https://github.com/Mikhalkevich-N/diplom_mikhalkevich-sys-45/blob/main/img/image-46.png)
 
-![png](image-52.png)
+![png](https://github.com/Mikhalkevich-N/diplom_mikhalkevich-sys-45/blob/main/img/image-52.png)
 
-![png](image-47.png)
+![png](https://github.com/Mikhalkevich-N/diplom_mikhalkevich-sys-45/blob/main/img/image-47.png)
 
-![png](image-49.png)
+![png](https://github.com/Mikhalkevich-N/diplom_mikhalkevich-sys-45/blob/main/img/image-49.png)
 
-![png](image-48.png)
+![png](https://github.com/Mikhalkevich-N/diplom_mikhalkevich-sys-45/blob/main/img/image-48.png)
 
 ### 3. Проверка и настройка ресурсов
 
@@ -159,35 +159,35 @@ terraform apply
 ```
 sudo nano ~/hosts.ini
 ```
-![png](image-40.png)
+![png](https://github.com/Mikhalkevich-N/diplom_mikhalkevich-sys-45/blob/main/img/image-40.png)
 
 Nginx на 2 ВМ. Замена стандартного файла на index.nginx.html
 [index.nginx.html](https://github.com/Mikhalkevich-N/diplom_mikhalkevich-sys-45/blob/main/ansible/index.nginx.html)
 
-![png](image-13.png)
+![png](https://github.com/Mikhalkevich-N/diplom_mikhalkevich-sys-45/blob/main/img/image-13.png)
 
 
 Elasticsearch
 
-![png](image-14.png)
+![png](https://github.com/Mikhalkevich-N/diplom_mikhalkevich-sys-45/blob/main/img/image-14.png)
 
 Kibana
 
-![png](image-15.png)
+![png](https://github.com/Mikhalkevich-N/diplom_mikhalkevich-sys-45/blob/main/img/image-15.png)
 
 Zabbix
 
-![png](image-16.png)
+![png](https://github.com/Mikhalkevich-N/diplom_mikhalkevich-sys-45/blob/main/img/image-16.png)
 
-![png](image-17.png)
+![png](https://github.com/Mikhalkevich-N/diplom_mikhalkevich-sys-45/blob/main/img/image-17.png)
 
-![png](image-18.png)
+![png](https://github.com/Mikhalkevich-N/diplom_mikhalkevich-sys-45/blob/main/img/image-18.png)
 
  Filebeat
 
- ![png](image-19.png)
+ ![png](https://github.com/Mikhalkevich-N/diplom_mikhalkevich-sys-45/blob/main/img/image-19.png)
 
-![png](image-20.png)
+![png](https://github.com/Mikhalkevich-N/diplom_mikhalkevich-sys-45/blob/main/img/image-20.png)
 
 Проверка и настройка ресурсов.
 
@@ -198,13 +198,13 @@ curl -v <публичный IP балансера>:80
 
 curl -v 158.160.139.105:80
 ```
-![png](image-50.png)
+![png](https://github.com/Mikhalkevich-N/diplom_mikhalkevich-sys-45/blob/main/img/image-50.png)
 
 ```
 http://158.160.139.105
 
 ```
-![png](image-51.png)
+![png](https://github.com/Mikhalkevich-N/diplom_mikhalkevich-sys-45/blob/main/img/image-51.png)
 
 Мониторинг. Zabbix.
 
@@ -212,27 +212,27 @@ http://158.160.139.105
 http://158.160.128.50/zabbix
 
 ```
-![png](image-43.png)
+![png](https://github.com/Mikhalkevich-N/diplom_mikhalkevich-sys-45/blob/main/img/image-43.png)
 
 Bводим пароль из playbook-zabbix.yaml
 
-![png](image-44.png)
+![png](https://github.com/Mikhalkevich-N/diplom_mikhalkevich-sys-45/blob/main/img/image-44.png)
 
-![png](image-27.png)
+![png](https://github.com/Mikhalkevich-N/diplom_mikhalkevich-sys-45/blob/main/img/image-27.png)
 
-![png](image-28.png)
+![png](imahttps://github.com/Mikhalkevich-N/diplom_mikhalkevich-sys-45/blob/main/img/image-28.png)
 
-![png](image-29.png)
+![png](https://github.com/Mikhalkevich-N/diplom_mikhalkevich-sys-45/blob/main/img/image-)29.png)
 
 ```
 login: Admin
 password: zabbix
 ```
-![png](image-30.png)
+![png](https://github.com/Mikhalkevich-N/diplom_mikhalkevich-sys-45/blob/main/img/image-30.png)
 
-![png](image-31.png)
+![png](https://github.com/Mikhalkevich-N/diplom_mikhalkevich-sys-45/blob/main/img/image-31.png)
 
-![png](image-32.png)
+![png](https://github.com/Mikhalkevich-N/diplom_mikhalkevich-sys-45/blob/main/img/image-32.png)
 
 Логи. Elasticsearch, Kibana, Filebeat.
 
@@ -242,21 +242,21 @@ http://84.201.149.73:5601
 
 ```
 
-![png](image-33.png)
+![png](https://github.com/Mikhalkevich-N/diplom_mikhalkevich-sys-45/blob/main/img/image-33.png)
 
 Создаю Index patern:
 
-![png](image-34.png)
+![png](https://github.com/Mikhalkevich-N/diplom_mikhalkevich-sys-45/blob/main/img/image-34.png)
 
-![png](image-35.png)
+![png](https://github.com/Mikhalkevich-N/diplom_mikhalkevich-sys-45/blob/main/img/image-35.png)
 
-![png](image-36.png)
+![png](https://github.com/Mikhalkevich-N/diplom_mikhalkevich-sys-45/blob/main/img/image-36.png)
 
 Логи отправляются:
 
-![png](image-37.png)
+![png](https://github.com/Mikhalkevich-N/diplom_mikhalkevich-sys-45/blob/main/img/image-37.png)
 
-![png](image-38.png)
+![png](https://github.com/Mikhalkevich-N/diplom_mikhalkevich-sys-45/blob/main/img/image-38.png)
 
 
 
