@@ -220,9 +220,9 @@ Bводим пароль из playbook-zabbix.yaml
 
 ![png](https://github.com/Mikhalkevich-N/diplom_mikhalkevich-sys-45/blob/main/img/image-27.png)
 
-![png](imahttps://github.com/Mikhalkevich-N/diplom_mikhalkevich-sys-45/blob/main/img/image-28.png)
+![png](https://github.com/Mikhalkevich-N/diplom_mikhalkevich-sys-45/blob/main/img/image-28.png)
 
-![png](https://github.com/Mikhalkevich-N/diplom_mikhalkevich-sys-45/blob/main/img/image-)29.png)
+![png](https://github.com/Mikhalkevich-N/diplom_mikhalkevich-sys-45/blob/main/img/image-29.png)
 
 ```
 login: Admin
