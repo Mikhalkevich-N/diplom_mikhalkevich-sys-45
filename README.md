@@ -86,7 +86,22 @@ Cоздайте ВМ, разверните на ней Elasticsearch. Устан
 ![png](https://github.com/Mikhalkevich-N/diplom_mikhalkevich-sys-45/blob/main/img/image-10.png)
 
 Создаю main.tf` c блоком провайдера и блоки для создания инфраструктуры в Yandex Cloud:
-Nginx-web-1, Nginx-web-2, Target group, Backend group,  HTTP router, Application load balancer, Zabbix, Elasticsearch, Kibana, Network, Subnet. Gateway. Route table, Security_groups, Bastion, Snapshot_schedule.
+- Nginx-web-1,
+- Nginx-web-2,
+- Target group,
+- Backend group,
+- HTTP router,
+- Application load balancer,
+- Zabbix,
+- Elasticsearch,
+- Kibana,
+- Network,
+- Subnet,
+- Gateway,
+- Route table,
+- Security_groups,
+- Bastion,
+- Snapshot_schedule.
 
 ![png](https://github.com/Mikhalkevich-N/diplom_mikhalkevich-sys-45/blob/main/img/image-11.png)
 
@@ -165,7 +180,6 @@ Nginx на 2 ВМ. Замена стандартного файла на index.n
 [index.nginx.html](https://github.com/Mikhalkevich-N/diplom_mikhalkevich-sys-45/blob/main/ansible/index.nginx.html)
 
 ![png](https://github.com/Mikhalkevich-N/diplom_mikhalkevich-sys-45/blob/main/img/image-13.png)
-
 
 Elasticsearch
 
